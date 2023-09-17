@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include<conio.h>
+#include <stdlib.h>
+
+typedef struct node
+{
+    int data;
+    struct node *next;
+} Node;
+
+Node *first, *temp, *current;
+int data, n, i, num, k, count = 1;
+
+void main()
+{
+    printf("enter the no of elements:");
+    scanf("%d", &n);
+    first = malloc(sizeof(struct node));
+    printf("enter the data of the first element: ");
+    scanf("%d", &num);
+    first->data = num;
+    first->next = NULL;
+    temp = first;
+
+    for (i = 2; i <= n; i++)
+    {
+        current = malloc(sizeof(struct node));
+        printf("enter the data for element %d: ", i);
+        scanf("%d", &num);
+        current->data = num;
+        current->next = NULL;
+        temp->next = current;
+        temp = temp->next;
+    }
+
+    temp = first;
+    while (temp != NULL)
+    {
+        printf("%d->", temp->data);
+        temp = temp->next;
+    }
+    printf("NULL!\n");
+
+    current = malloc(sizeof(struct node));
+    printf("enter the value to be inserted: ");
+    scanf("%d", &num);
+    current->data = num;
+    current->next = first;
+    first = current;  
+
+    temp = first;
+    while (temp != NULL)
+    {
+        printf("%d->", temp->data);
+        temp = temp->next;
+    }
+    printf("NULL!\n");
+}
+output
+enter the no of elements: 3
+enter the data of the first element: 10
+enter the data for element 2: 20
+enter the data for element 3: 30
+10->20->30->NULL!
+enter the value to be inserted: 5
+5->10->20->30->NULL!
