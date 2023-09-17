@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <conio.h>
+
+int main() {
+    char charList[100];
+    int vowelCount = 0;
+
+    clrscr(); 
+
+    printf("Enter a list of characters (up to 100 characters):\n");
+    gets(charList); // Input the character list
+
+    
+    for (int i = 0; charList[i] != '\0'; i++) {
+        
+        char lowercaseChar = tolower(charList[i]);
+
+      
+        if (lowercaseChar == 'a' || lowercaseChar == 'e' || lowercaseChar == 'i' ||
+            lowercaseChar == 'o' || lowercaseChar == 'u') {
+            vowelCount++;
+        }
+    }
+
+    printf("Number of vowels in the list: %d\n", vowelCount);
+
+    getch(); 
+    return 0;
+}
+output
+Enter a list of characters (up to 100 characters):
+The sun is shining brightly
+Number of vowels in the list: 7
