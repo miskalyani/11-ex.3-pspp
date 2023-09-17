@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <conio.h>
+#include <string.h>
+
+int main() {
+    char charList[100];
+    int k;
+
+    clrscr();
+
+    printf("Enter a list of characters (up to 100 characters):\n");
+    gets(charList);
+
+    printf("Enter the position (k) of the character to delete: ");
+    scanf("%d", &k);
+
+    int len = strlen(charList);
+
+    if (k >= 1 && k <= len) {
+        for (int i = k - 1; i < len - 1; i++) {
+            charList[i] = charList[i + 1];
+        }
+        charList[len - 1] = '\0';
+
+        printf("Resulting string after deleting character at position %d: %s\n", k, charList);
+    } else {
+        printf("Invalid position. Position (k) must be between 1 and %d.\n", len);
+    }
+
+    getch();
+    return 0;
+}
+output 
+Enter a list of characters (up to 100 characters):
+Programming is fun!
+Enter the position (k) of the character to delete: 12
+Resulting string after deleting character at position 12: Programming isfun!
