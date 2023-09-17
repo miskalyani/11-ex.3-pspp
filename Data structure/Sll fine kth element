@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include<conio.h>
 #include <stdlib.h>
 
 typedef struct node
@@ -35,7 +36,7 @@ void main()
     temp = first;
     while (temp != NULL)
     {
-        printf("%d<=>", temp->data);
+        printf("%d->", temp->data);
         temp = temp->next;
     }
     printf("NULL!\n");
